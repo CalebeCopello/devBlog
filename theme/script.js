@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded',changeTheme)
 class Theme {
     constructor(bg0_h,bg0,bg1,bg2,bg3,bg4,bg0_s,fg0,fg1,fg2,fg3,fg4,gray3,red1,green1,yellow1,blue1,purple1,aqua1,orange1) {
         this.bg0_h = bg0_h
@@ -74,8 +75,7 @@ for(i=0; i < 29; i++) {
     let className = 'divThemeColorBoxEx' + i
     div.classList.add('divThemeColorBox')
     div.classList.add(className)
-    let bgC = 'var(--' + themeArray[i] + ')'
-    div.style.backgroundColor = bgC
+    div.style.backgroundColor = 'var(--' + themeArray[i] + ')'
     div.style.display = 'grid inline'
     div.textContent = themeArray[i]
     DIVWRAPPERTHEME.appendChild(div)

@@ -95,9 +95,14 @@ orange1: #af3a03
     --orange1: #fe8019;
     
 }
+@font-face {
+    font-family: JBregular;
+    src: url(./JetBrainsMono-Regular.woff2) format('woff2');
+}
 * {
     transition: 0.5s;
     /* border: 1px solid red; */
+    font-family: JBregular;
 }
 body {
     background-color: var(--bgD);
