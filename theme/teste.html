@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Switch Simples</title>
+    <style>
+        /* Estilização padrão do toggle switch */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        /* Estilo do slider (a parte deslizante do toggle switch) */
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 34px; /* Faz o slider circular */
+            cursor: pointer;
+            transition: 0.4s; /* Efeito de transição ao mudar de estado */
+        }
+
+        /* Estilo do slider quando o toggle switch está marcado */
+        .slider::before {
+            content: "";
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: white;
+            top: 4px;
+            left: 4px;
+            transition: 0.4s; /* Efeito de transição ao mudar de estado */
+        }
+
+        /* Estilo do slider quando o toggle switch está marcado (quando o checkbox está marcado) */
+        input[type="checkbox"]:checked + .slider {
+            background-color: #66bb6a; /* Cor do fundo quando marcado */
+        }
+
+        /* Estilo do slider quando o toggle switch está marcado (quando o checkbox está marcado) */
+        input[type="checkbox"]:checked + .slider::before {
+            transform: translateX(26px); /* Desloca o círculo branco para a direita quando marcado */
+        }
+    </style>
+</head>
+<body>
+    <!-- Toggle Switch -->
+    <label class="toggle-switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+</body>
+</html>
