@@ -9,19 +9,19 @@
 <body>
     <div class="divWrapperThemeButtons">
         <div class="divWrapperBgFgTheme">
-            <input type="range" name="background" id="backgroundThemeRange" min="0" max="6" step="1" value="1" class="themeRange themeRangeLeft">
-            <div class="divBgFgThemeDisplayContainer">
+            <input type="range" name="background" id="backgroundThemeRange" min="0" max="6" step="1" value="1" class="themeRange themeRangeLeft" title="Change the background">
+            <div class="divBgFgThemeDisplayContainer" title="Background/Foreground Example">
                 <div class="divBackgroundThemeDisplay" id="divBackgroundThemeDisplay"></div>
                 <div class="divForegroundThemeDisplay" id="divForegroundThemeDisplay"></div>
             </div>
-            <input type="range" name="foreground" id="foregroundThemeRange" min="0" max="4" step="1" value="1" class="themeRange themeRangeRight">
+            <input type="range" name="foreground" id="foregroundThemeRange" min="0" max="4" step="1" value="1" class="themeRange themeRangeRight" title="Change the foreground">
         </div>
-        <label class="wrapperThemeToggleMode">
+        <label class="wrapperThemeToggleMode" title="Select Dark/Light Mode">
             <input type="checkbox" name="themeSelector" id="themeSelector">
                 <span class="themeSelectorSlider"></span>
         </label>
     </div>
-    <div class="divWrapperThemeColors" id="divWrapperThemeColors"></div>
+    <div class="divWrapperThemeColors" id="divWrapperThemeColors" title="Color Palette"></div>
 </body>
     <script src="./script.js"> </script>
 </html>
