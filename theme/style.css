@@ -96,8 +96,11 @@ orange1: #af3a03
     
 }
 * {
-    background-color: var(--bgD);
+    transition: 0.5s;
     /* border: 1px solid red; */
+}
+body {
+    background-color: var(--bgD);
 }
 /* Div theme control */
 .divWrapperThemeButtons {
@@ -166,7 +169,7 @@ orange1: #af3a03
     position: absolute;
     cursor: pointer;
     background-color: var(--fgD);
-    border: 3px solid var(--bgD);
+    border: 3px solid var(--bg0_h);
     top: 0;
     left: 0;
     right: 0;
@@ -184,7 +187,7 @@ orange1: #af3a03
     width: 20px;
     left: 2px;
     bottom: 2px;
-    background-color: var(--bgD);
+    background-color: var(--bg0_h);
     transition: .5s;
     border-radius: 50%;
 }
