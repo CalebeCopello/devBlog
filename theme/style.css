@@ -99,20 +99,25 @@ orange1: #af3a03
     background-color: var(--bgD);
     /* border: 1px solid red; */
 }
+/* Div theme control */
+.divWrapperThemeButtons {
+    display: flex;
+    position: relative;
+    background-color: var(--fgD);
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.355);
+    width: 575px;
+    height: auto;
+    padding: 3px;
+    margin: auto;
+}
+/* Div to the range background foreground */
 .divWrapperBgFgTheme {
     background-color: var(--fgD);
     display: flex;
     width: 300px;
     padding: 5px;
-}
-.divWrapperThemeButtons {
-    display: flex;
-    position: relative;
-    background-color: var(--fgD);
-    width: 575px;
-    height: auto;
-    padding: 3px;
-    margin: auto;
 }
 .divBgFgThemeDisplayContainer {
     display: relative;
@@ -147,14 +152,15 @@ orange1: #af3a03
 .themeRangeLeft {
     margin-right: 10px;
 }
+/* Slide to change dark-light mode */
 .wrapperThemeToggleMode {
     position: absolute;
     background-color: var(--fgD);
     top: 5px;
-    right: 10px;
+    right: 0px;
     width: 60px;
     height: 30px;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 .themeSelectorSlider {
     position: absolute;
@@ -189,6 +195,7 @@ input:checked + .themeSelectorSlider:before {
     transform: translateX(30px);
 
 }
+/* Div with the color samples */
 .divWrapperThemeColors {
     background-color:var(--fgD);
     max-width: 575px;
@@ -198,6 +205,7 @@ input:checked + .themeSelectorSlider:before {
     border-radius: 3px;
     box-shadow: 5px 5px rgba(0, 0, 0, 0.355);
     margin: 30px auto;
+    margin-top: 15px;
 }
 .divThemeColorBox {
     width: 70px;
