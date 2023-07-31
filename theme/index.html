@@ -7,8 +7,20 @@
     <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 <body>
-    <div class="wrapperTheme" id="divWrapperTheme">
+    <div class="divWrapperThemeButtons">
+        <div class="divWrapperBgFgTheme">
+            <input type="range" name="background" id="backgroundThemeRange" min="0" max="6" step="1" class="themeRange themeRangeLeft">
+            <div class="divBgFgThemeDisplayContainer">
+                <div class="divBackgroundThemeDisplay" id="divBackgroundThemeDisplay"></div>
+                <div class="divForegroundThemeDisplay" id="divForegroundThemeDisplay"></div>
+            </div>
+            <input type="range" name="foreground" id="foregroundThemeRange" min="0" max="4" step="1" class="themeRange themeRangeRight">
+        </div>
+        <div class="divWrapperThemeToggleMode">
+            <input type="checkbox" name="themeSelector" id="themeSelector">
+        </div>
     </div>
+    <div class="divWrapperThemeColors" id="divWrapperThemeColors"></div>
 </body>
     <script src="./script.js"> </script>
 </html>

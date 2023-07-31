@@ -78,11 +78,13 @@ orange1: #af3a03
     --bg3: #665c54;
     --bg4: #7c6f64;
     --bg0_s: #32302f;
+    --bgD: #1d2021;
     --fg0: #fbf1c7;
     --fg1: #ebdbb2;
     --fg2: #d5c4a1;
     --fg3: #bdae93;
     --fg4: #a89984;
+    --fgD: #fbf1c7;
     --gray3: #a89984;
     --red1: #fb4934;
     --green1: #b8bb26;
@@ -94,11 +96,64 @@ orange1: #af3a03
     
 }
 * {
-    background-color: var(--bg0_h);;
+    background-color: var(--bgD);
+    /* border: 1px solid red; */
 }
-.wrapperTheme {
-    background-color:var(--bg4);
+.divWrapperBgFgTheme {
+    background-color: var(--fgD);
+    display: flex;
+    width: 300px;
+    padding: 5px;
+}
+.divWrapperThemeButtons {
+    display: flex;
+    position: relative;
+    background-color: var(--fgD);
     width: 575px;
+    height: auto;
+    padding: 3px;
+    margin: auto;
+}
+.divBgFgThemeDisplayContainer {
+    display: relative;
+    background-color: var(--fgD);
+}
+.divBackgroundThemeDisplay {
+    position: absolute;
+    background-color: var(--bgD);
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.355);
+    height: 30px;
+    width: 30px;
+}
+.divForegroundThemeDisplay {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    background-color: var(--fgD);
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.355);
+    height: 30px;
+    width: 30px;
+}
+.themeRange {
+    width: 100px;
+}
+.themeRangeRight {
+    margin-left: 15px;
+}
+.themeRangeLeft {
+    margin-right: 10px;
+}
+.divWrapperThemeToggleMode {
+    position: absolute;
+    right: 0px;
+}
+.divWrapperThemeColors {
+    background-color:var(--fgD);
+    max-width: 575px;
     height: auto;
     padding: 20px;
     border: 1px solid black;
@@ -106,13 +161,13 @@ orange1: #af3a03
     box-shadow: 5px 5px rgba(0, 0, 0, 0.355);
     margin: 30px auto;
 }
-.themeColor {
-    display: inline-block;
+.divThemeColorBox {
     width: 70px;
     height: 70px;
     border: 1px solid black;
     border-radius: 3px;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.355);
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.355);
     text-align: center;
+    align-content: center;
     margin: 5px;
 }
