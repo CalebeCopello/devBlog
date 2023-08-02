@@ -1,4 +1,29 @@
-document.addEventListener('DOMContentLoaded',changeTheme)
+let displayMode = localStorage.getItem('displayMode')
+let displayBackground = localStorage.getItem('displayBackground')
+let displayForeground = localStorage.getItem('displayForeground')
+const THEMESELECTOR = document.getElementById('themeSelector')
+const BGRANGEINPUT = document.getElementById('backgroundThemeRange')
+const FGRANGEINPUT = document.getElementById('foregroundThemeRange')
+if (displayMode == 'light') {
+    THEMESELECTOR.checked= true
+}
+if (!displayMode) {
+    localStorage.setItem('displayMode','dark')
+    displayMode = 'dark'
+    THEMESELECTOR.checked = false
+}
+if (!displayBackground) {
+    localStorage.setItem('displayBackground', '1')
+    displayBackground = '1'
+} else {
+    BGRANGEINPUT.value = localStorage.getItem('displayBackground')
+}
+if (!displayForeground) {
+    localStorage.setItem('displayForeground', '1')
+    displayForeground = '1'
+} else {
+    FGRANGEINPUT.value = localStorage.getItem('displayForeground')
+}
 class Theme {
     constructor(bg0_h,bg0,bg1,bg2,bg3,bg4,bg0_s,fg0,fg1,fg2,fg3,fg4,gray3,red1,green1,yellow1,blue1,purple1,aqua1,orange1) {
         this.bg0_h = bg0_h
@@ -82,45 +107,44 @@ for(i=0; i < 29; i++) {
 }
 //Function to change background and foreground
 //background
-const BGRANGEINPUT = document.getElementById('backgroundThemeRange')
 const BGEDIV = document.getElementById('divBackgroundThemeDisplay')
 function changeBackground() {
     let value = BGRANGEINPUT.value
     let bgArray = ['bg0_h','bg0','bg1','bg2','bg3','bg4','bg0_s']
     BGEDIV.style.backgroundColor = 'var(--' + bgArray[value] + ')'
     ROOT.style.setProperty('--bgD', 'var(--' + bgArray[value] + ')')
+    localStorage.setItem('displayBackground', value)
 }
 BGRANGEINPUT.addEventListener('input', changeBackground)
 //foreground
-const FGRANGEINPUT = document.getElementById('foregroundThemeRange')
 const FGEDIV = document.getElementById('divForegroundThemeDisplay')
 function changeForeground() {
     let value = FGRANGEINPUT.value
     let fgArray = ['fg0','fg1','fg2','fg3','fg4']
     FGEDIV.style.backgroundColor = 'var(--' + fgArray[value] + ')'
     ROOT.style.setProperty('--fgD', 'var(--' + fgArray[value] + ')')
+    localStorage.setItem('displayForeground', value)
+
 }
 FGRANGEINPUT.addEventListener('input', changeForeground)
 //Change between dark and ligh modes
 const ROOT = document.querySelector(':root')
-const THEMESELECTOR = document.getElementById('themeSelector')
 function changeTheme() {
     if(THEMESELECTOR.checked) {
         for (const key in LIGHT) {
             ROOT.style.setProperty(`--${key}`, `${LIGHT[key]}`)
         }
-        ROOT.style.setProperty('--bgD',LIGHT.bg1)
-        ROOT.style.setProperty('--fgD',LIGHT.fg1)
-        BGRANGEINPUT.value = 2
-        FGRANGEINPUT.value = 1
+        localStorage.setItem('displayMode', 'light')
+        THEMESELECTOR.value = true
     } else {
         for (const key in DARK) {
             ROOT.style.setProperty(`--${key}`, `${DARK[key]}`)
         }
-        ROOT.style.setProperty('--bgD',DARK.bg0)
-        ROOT.style.setProperty('--fgD',DARK.fg1)
-        BGRANGEINPUT.value = 1
-        FGRANGEINPUT.value = 1
+        localStorage.setItem('displayMode', 'dark')
+        THEMESELECTOR.value = false
     }
 }
+document.addEventListener('DOMContentLoaded',changeTheme)
+document.addEventListener('DOMContentLoaded',changeBackground)
+document.addEventListener('DOMContentLoaded',changeForeground)
 THEMESELECTOR.addEventListener('change',changeTheme)
